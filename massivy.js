@@ -22,14 +22,40 @@ console.log(mass);                                                              
 
 console.log("Добавить к каждому элементу массива слово hello");                  //Добавить к каждому элементу массива слова hello
 
-["Денис", "Артем", "Катя", "Марина", "Никита"].forEach(function(item) {;         //Объявляем массив
-  console.log(`hello, ${item}`);                                                 //добавляем hello к каждому елементу массива и выводим результат
-});
+let names = ["Денис", "Артем", "Катя", "Марина", "Никита"];                       //Объявляем массив
+let adding = names.map(item => "hello, " + item);                                //добавляем hello к каждому елементу массива
+console.log(adding);                                                             //выводим результат
+
 
 console.log("Преобразовать числовой массив в boolean");                          //Преобразовать числовой массив в boolean
 
-let num_arr = [1, 2, 3, 4, 5];                                                   //объявляем массив
-let bool_arr = num_arr.forEach(function(item) {                                  //указываем условие
-    console.log(item > 2)                                                        //выводим преобразованный массив в boolean
-});
+let num_arr = [0, 1, 2, 3, 4];                                                   //объявляем массив
+let bool_arr = num_arr.map(item => !!item);                                      //указываем условие
+console.log(bool_arr);                                                           //выводим преобразованный массив в boolean        
+
+
+console.log("Задачи из теории");
+console.log("Сортировать в обратном порядке");
+
+let arr = [5, 2, 1, -10, 8];                                                     //заданный массив
+arr.sort((x, y) => y - x);                                                       //сортируем
+console.log(arr);                                                                // 8, 5, 2, 1, -10 должно получиться
+
+
+console.log("Скопировать и отсортировать массив");
+function copySorted(arr2) {                                                      //"рисуем" функцию
+ return arr2.slice().sort();
+}
+let arr2 = ["HTML", "JavaScript", "CSS"];                                        //заданный массив
+let sorted = copySorted(arr2);
+console.log(sorted);                                                             // CSS, HTML, JavaScript
+console.log(arr2);                                                               // HTML, JavaScript, CSS (без изменений)
+
+console.log("Трансформировать в массив имён");
+let vasya = {name: "Вася", age: 25};
+let petya = {name: "Петя", age: 30};
+let masha = {name: "Маша", age: 28};
+let users = [vasya, petya, masha];
+let names2 = users.map(item => item.name);                                        //преобразуем в массив имен                                                        
+console.log(names2);                                                              // Вася, Петя, Маша
 
