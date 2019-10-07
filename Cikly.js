@@ -89,7 +89,7 @@ let chislo;
 do {
   chislo = prompt("Введи число больше 100", 0)
 }
- while (chislo <= 100 && chislo);
+ while (chislo <= 100);
 
 console.log("Вывести простые числа");
 
