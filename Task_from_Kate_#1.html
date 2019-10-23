@@ -10,10 +10,12 @@ let num2 = prompt('Введите второе число');
 let tceloe_chislo = function () {
   
   let a = 11, b = 4;
-  if ((num1 > num2) && (num1 <= a) && !(num1 % b) ){
+  if ((num1 > num2) && (num1 <= a) && !(num1 % b) ) {
     alert (num1);
-  } else if ((num2 > num1) && (num2 <= a) && !(num2 % b) ){
+  } else if ((num2 > num1) && (num2 <= a) && !(num2 % b) ) {
     alert(num2);
+  } else if (num1 == num2) {
+    alert(`Числа равны, введите разные числа`);
   } else {
     alert(`Введите целое число, которое делится на ${b}`);
   }
