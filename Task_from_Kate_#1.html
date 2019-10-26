@@ -4,23 +4,22 @@
 
 'use strict';
 
-let num1 = prompt('Введите первое число');
-let num2 = prompt('Введите второе число');
+let a = prompt('Введите первое число');
+let b = prompt('Введите второе число');
 
-let tceloe_chislo = function () {
-  
-  let a = 11, b = 4;
-  if ((num1 > num2) && (num1 <= a) && !(num1 % b) ) {
-    alert (num1);
-  } else if ((num2 > num1) && (num2 <= a) && !(num2 % b) ) {
-    alert(num2);
-  } else if (num1 == num2) {
-    alert(`Числа равны, введите разные числа`);
-  } else {
-    alert(`Введите целое число, которое делится на ${b}`);
-  }
+let tceloe_max_chislo = function () {
+
+  if ((a > b) && (a <= a) && (a % b == 0)) {                     //проверка на деление, <= и какое число из введеных больше
+    alert (a);                                                   //для первого введенного числа
+  } else if ((b > a) && (b <= a) && (b % b == 0)) {              //также, проверяем условия
+    alert(b);                                                    //только для второго введенного числа
+  } else if ((a == b) && (a <= a) && (a % b == 0)) {             //если числа равны
+    alert(a);
+  } else {                                                        
+    alert(`Уловия невыполнимы, введите целые натуральные числа`); //иначе выводим сообщение
+}
 }
 
-tceloe_chislo();
+tceloe_max_chislo();                                               //исполняем функцию
 
 </script>
