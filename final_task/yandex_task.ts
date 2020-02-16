@@ -1,5 +1,5 @@
 describe(`Яндекс тест`, function() {
-  
+
 //определяем, куда будем заходить
 browser.waitForAngularEnabled(false);
 browser.get(`https://www.yandex.ru/`);
