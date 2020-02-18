@@ -1,5 +1,5 @@
 describe(`Яндекс тест`, function() {
-
+  
 //определяем, куда будем заходить
 browser.waitForAngularEnabled(false);
 browser.get(`https://www.yandex.ru/`);
@@ -17,23 +17,24 @@ it(`сравниваем вкладки еще`, function() {
     let result = protractor.ExpectedConditions;
 
     //кликаем на кнопку смены локации
-    browser.wait(result.elementToBeClickable(location), 4000);
+    browser.wait(result.elementToBeClickable(location), 2000);
     location.click();
    
     //ищем нужный город и выбираем из списка
-    browser.wait(result.elementToBeClickable(gorod), 4000);
+    browser.wait(result.elementToBeClickable(gorod), 2000);
     gorod.clear();
     gorod.sendKeys(country);
     strana.submit();
     
     //кликаем на кнопку "еще" на главной странице
-    browser.wait(result.elementToBeClickable(eshyo), 4000);
+    browser.wait(result.elementToBeClickable(eshyo), 2000);
     eshyo.click();
       
     //ждем вывода попапа после нажатия на "еще", запоминаем элементы попапа
     browser.wait(result.visibilityOf(element(by.css(`.popup2 .home-tabs__more`))), 4000);
     let content = element(by.css(`.popup2 .home-tabs__more`)).all(by.tagName(`a`)).getText();
     return content
+
   }
 
 //вводим значения городов
@@ -42,5 +43,9 @@ it(`сравниваем вкладки еще`, function() {
 
 //сверяем результаты
   expect(paris_city).toEqual(london_city);
+
+//вытаскиваем результат Парижа и Лондона в консоль  
+  paris_city.then((expect)=> console.log(expect));
+  london_city.then((expect)=> console.log(expect));
 });
 });

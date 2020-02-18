@@ -6,6 +6,6 @@ exports.config = {
   capabilities: {
     browserName: 'chrome'  
   },
-
-  specs: ['yandex_task.js']
+  
+  specs: ['yandex_task.ts']
 }; 
